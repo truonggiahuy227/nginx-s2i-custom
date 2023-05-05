@@ -58,7 +58,7 @@ RUN yum install -y yum-utils gettext hostname && \
     rpm -V $INSTALL_PKGS && \
     yum -y clean all --enablerepo='*'
 
-RUN CD ./s2i/bin && ls
+RUN cd ./s2i/bin && ls
 # Copy the S2I scripts from the specific language image to $STI_SCRIPTS_PATH
 COPY ./s2i/bin/ $STI_SCRIPTS_PATH
 
