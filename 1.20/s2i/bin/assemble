@@ -11,13 +11,21 @@ fix-permissions ./
 pwd && ls
 
 if [ ! x"${NGINX_CONF_FILE_PATH}" == "x" ]; then
+  if [ -f "$NGINX_CONF_FILE_PATH" ]; then
     mv -v ${NGINX_CONF_FILE_PATH}/* /opt/app-root/src
-    rm -r ./${NGINX_CONF_FILE_PATH} 
+    rm -r ${NGINX_CONF_FILE_PATH}
+  else
+    echo "$NGINX_CONF_FILE_PATH is not exist"
+  fi
 fi
 
 if [ ! x"${INDEX_FILE_PATH}" == "x" ]; then
+  if [ -f "$INDEX_FILE_PATH" ]; then
     mv -v ${INDEX_FILE_PATH}/* /opt/app-root/src
-    rm -r ./${INDEX_FILE_PATH} 
+    rm -r ${INDEX_FILE_PATH} 
+  else
+    echo "$INDEX_FILE_PATH is not exist"
+  fi
 fi
 
 if [ -f ./nginx.conf ]; then
