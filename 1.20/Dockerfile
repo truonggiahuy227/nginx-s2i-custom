@@ -59,7 +59,7 @@ RUN yum install -y yum-utils gettext hostname && \
     yum -y clean all --enablerepo='*'
 
 # Copy the S2I scripts from the specific language image to $STI_SCRIPTS_PATH
-COPY s2i/bin/ $STI_SCRIPTS_PATH
+COPY ./s2i/bin/ $STI_SCRIPTS_PATH
 
 # Copy extra files to the image.
 COPY root/ /
