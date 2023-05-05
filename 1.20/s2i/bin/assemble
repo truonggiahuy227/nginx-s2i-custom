@@ -11,7 +11,7 @@ fix-permissions ./
 pwd && ls
 
 if [ ! x"${NGINX_CONF_FILE_PATH}" == "x" ]; then
-  if [ -f "$NGINX_CONF_FILE_PATH" ]; then
+  if [ -d "$NGINX_CONF_FILE_PATH" ]; then
     mv -v ${NGINX_CONF_FILE_PATH}/* /opt/app-root/src
     rm -r ${NGINX_CONF_FILE_PATH}
   else
@@ -20,7 +20,7 @@ if [ ! x"${NGINX_CONF_FILE_PATH}" == "x" ]; then
 fi
 
 if [ ! x"${INDEX_FILE_PATH}" == "x" ]; then
-  if [ -f "$INDEX_FILE_PATH" ]; then
+  if [ -d "$INDEX_FILE_PATH" ]; then
     mv -v ${INDEX_FILE_PATH}/* /opt/app-root/src
     rm -r ${INDEX_FILE_PATH} 
   else
