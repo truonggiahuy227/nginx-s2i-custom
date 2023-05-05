@@ -11,12 +11,12 @@ fix-permissions ./
 pwd && ls
 
 if [ ! x"${NGINX_CONF_FILE_PATH}" == "x" ]; then
-    cp -r ./${NGINX_CONF_FILE_PATH}/ /opt/app-root/src
+    mv -v ${NGINX_CONF_FILE_PATH}/* /opt/app-root/src
     rm -r ./${NGINX_CONF_FILE_PATH} 
 fi
 
 if [ ! x"${INDEX_FILE_PATH}" == "x" ]; then
-    cp -r ./${INDEX_FILE_PATH}/ /opt/app-root/src
+    mv -v ${INDEX_FILE_PATH}/* /opt/app-root/src
     rm -r ./${INDEX_FILE_PATH} 
 fi
 
