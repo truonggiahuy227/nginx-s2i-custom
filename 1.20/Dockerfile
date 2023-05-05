@@ -60,10 +60,10 @@ RUN yum install -y yum-utils gettext hostname && \
 
 RUN ls
 # Copy the S2I scripts from the specific language image to $STI_SCRIPTS_PATH
-COPY ./s2i/bin/ $STI_SCRIPTS_PATH
+COPY 1.20/s2i/bin/ $STI_SCRIPTS_PATH
 
 # Copy extra files to the image.
-COPY ./root/ /
+COPY 1.20/root/ /
 
 # Changing ownership and user rights to support following use-cases:
 # 1) running container on OpenShift, whose default security model
